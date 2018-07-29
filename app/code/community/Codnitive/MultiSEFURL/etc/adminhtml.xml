@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE_EULA.html.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.codnitive.com/en/terms-of-service-softwares/
+ * http://www.codnitive.com/fa/terms-of-service-softwares/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive
+ * @package    Codnitive_MultiSEFURL
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2012 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://www.codnitive.com/en/terms-of-service-softwares/ End User License Agreement (EULA 1.0)
+ */
+-->
+<config>
+    <menu>
+        <codall>          
+            <children>
+                <codnitiveseo trnslate="title">
+                    <title>SEO</title>
+                    <sort_order>500</sort_order>
+                    <children>
+                        <multisefurl trnslate="title" module="multisefurl">
+                            <title>Multilingual SEF URL</title>
+                            <sort_order>10</sort_order>
+                            <children>
+                                <configuration trnslate="title" module="multisefurl">
+                                    <title>Configuration</title>
+                                    <sort_order>20</sort_order>
+                                    <action>adminhtml/system_config/edit/section/codnitiveseo</action>
+                                </configuration>
+                            </children>
+                        </multisefurl>
+                    </children>
+                </codnitiveseo>
+            </children>
+        </codall>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <codall>
+                        <children>
+                            <codnitiveseo translate="title">
+                                <title>SEO</title>
+                                <sort_order>200</sort_order>
+                                <children>
+                                    <multisefurl translate="title" module="multisefurl">
+                                        <title>Multilingual SEF URL</title>
+                                        <sort_order>10</sort_order>
+                                        <children>
+                                            <configuration translate="title" module="multisefurl">
+                                                <title>Configuration</title>
+                                                <sort_order>10</sort_order>
+                                            </configuration>
+                                        </children>
+                                    </multisefurl>
+                                </children>
+                            </codnitiveseo>
+                        </children>
+                    </codall>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <codnitiveseo>
+                                        <title>CODNITIVE SEO Section</title>
+                                    </codnitiveseo>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

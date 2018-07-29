@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE_EULA.html.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.codnitive.com/en/terms-of-service-softwares/
+ * http://www.codnitive.com/fa/terms-of-service-softwares/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive
+ * @package    Codnitive_MultiSEFURL
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2012 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://www.codnitive.com/en/terms-of-service-softwares/ End User License Agreement (EULA 1.0)
+ */
+-->
+
+<config>
+	<modules>
+		<Codnitive_MultiSEFURL>
+			<version>1.0.07</version>
+			<title>Multilingual SEF URL</title>
+			<link><![CDATA[http://www.codnitive.com/]]></link>
+			<codPool>community</codPool>
+		</Codnitive_MultiSEFURL>
+	</modules>
+	<global>
+		<blocks>
+			<multisefurl>
+				<class>Codnitive_MultiSEFURL_Block</class>
+			</multisefurl>
+			<adminhtml>
+				<rewrite>
+					<cms_page_edit_tab_main>Codnitive_MultiSEFURL_Block_Adminhtml_Cms_Page_Edit_Tab_Main</cms_page_edit_tab_main>
+				</rewrite>
+			</adminhtml>
+		</blocks>
+		<helpers>
+			<multisefurl>
+				<class>Codnitive_MultiSEFURL_Helper</class>
+			</multisefurl>
+		</helpers>
+		<models>
+			<multisefurl>
+				<class>Codnitive_MultiSEFURL_Model</class>
+			</multisefurl>
+			<catalog>
+				<rewrite>
+					<product_url>Codnitive_MultiSEFURL_Model_Catalog_Product_Url</product_url>
+					<category>Codnitive_MultiSEFURL_Model_Catalog_Category</category>
+				</rewrite>
+			</catalog>
+			<cms_resource>
+				<rewrite>
+					<page>Codnitive_MultiSEFURL_Model_Cms_Resource_Page</page>
+				</rewrite>
+			</cms_resource>
+		</models>
+		<events>
+			<controller_front_init_routers>
+				<observers>
+					<multisefurl>
+						<type>model</type>
+						<class>multisefurl/observer</class>
+						<method>urlDecoder</method>
+					</multisefurl>
+				</observers>
+			</controller_front_init_routers>
+		</events>
+	</global>
+
+	<adminhtml>
+		<translate>
+			<modules>
+				<Codnitive_MultiSEFURL>
+					<files>
+						<default>Codnitive_MultiSEFURL.csv</default>
+					</files>
+				</Codnitive_MultiSEFURL>
+			</modules>
+		</translate>
+	</adminhtml>
+
+	<default>
+		<codnitiveseo>
+			<multisefurl>
+				<active>0</active>
+				<chkfrq>518400</chkfrq>
+				<frtrn>1</frtrn>
+			</multisefurl>
+		</codnitiveseo>
+	</default>
+</config>
